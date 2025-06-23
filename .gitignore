@@ -1,0 +1,58 @@
+# Arquivos de log
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Arquivos de dependências locais (gerenciados pelo Maven)
+/target/
+/pom.xml.tag
+/pom.xml.releaseBackup
+/pom.xml.versionsBackup
+/pom.xml.next
+/release.properties
+/dependency-reduced-pom.xml
+/build-report.txt
+
+# Arquivos gerados pela IDE
+# IntelliJ
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+.nb-gradle/
+
+# Arquivos de Sistema Operacional
+.DS_Store
+Thumbs.db
+
+# Arquivos de configuração de build do Maven
+pom.xml.bak
+target/
+
+# Arquivos de wrapper do Maven
+.mvn/
+mvnw
+mvnw.cmd
+
+# Arquivos de teste e relatórios
+surefire-reports/
+failsafe-reports/
+
+# Arquivos de pacote
+*.jar
+*.war
+*.ear
