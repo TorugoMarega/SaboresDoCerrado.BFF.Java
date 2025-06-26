@@ -7,6 +7,7 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpClientErrorException;
 import org.springframework.web.client.RestTemplate;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.util.UriComponentsBuilder;
@@ -56,7 +57,13 @@ public class PerfilService implements IPerfilService {
             }
             log.info("Resposta recebida da API de autenticacao, perfil encontrado");
             return responseEntity.getBody();
-        } catch (RestClientException e) {
+
+        }
+        catch (HttpClientErrorException.NotFound e) {
+            log.warn("Perfil com id {} não encontrado na API de autenticacao.", id);
+            return null;
+        }
+        catch (RestClientException e) {
             log.error("Erro durante a busca do perfil na API de autenticacao: {}", buscaPorIdEndpoint, e);
             throw e;
         }
